@@ -1,7 +1,14 @@
 <ion-view view-title="Diario Del Viaggiatore">
-  <ion-content ng-controller="MapCtrl">
+  <ion-content ng-controller="MapCtrl" ng-init="init()">
     <h1>Maps</h1>
-    <openlayers ol-center="center" height="70%" width="100%"></openlayers>
+
+    <ng-map zoom="11" center="[{{lat}}, {{long}}]">
+      <marker ng-repeat="marker in markers"
+              position="[{{markers[$index].lat}}, {{markers[$index].lng}}]"
+              data="bla bla"
+              on-click="showData()";
+              title="bla bla"></marker>
+    </ng-map>
     <!--<button ion-button class="button button-positive  ion button round" ng-click="getPosition()">Get Position </button>
     <button ion-button class="button button-positive  ion button round" color="secondary">Watch Position</button>-->
   </ion-content>

@@ -5271,16 +5271,23 @@ ion-tabs.tabs-striped.tabs-color-active-dark .tab-item.tab-item-active, ion-tabs
   min-height: 100%;
   max-height: 100%;
   width: 275px;
-  background-color: #fff; }
+
+
+
+}
   .menu .scroll-content {
     z-index: 10; }
   .menu .bar-header {
-    z-index: 11; }
+    z-index: 11;
+    background-color: #163142;
+  }
 
 .menu-content {
   -webkit-transform: none;
   transform: none;
-  box-shadow: -1px 0px 2px rgba(0, 0, 0, 0.2), 1px 0px 2px rgba(0, 0, 0, 0.2); }
+  box-shadow: -1px 0px 2px rgba(0, 0, 0, 0.2), 1px 0px 2px rgba(0, 0, 0, 0.2);
+  background-color: #387ef5;
+}
 
 .menu-open .menu-content .pane,
 .menu-open .menu-content .scroll-content {

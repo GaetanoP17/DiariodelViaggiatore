@@ -1,0 +1,39 @@
+<ion-view view-title="Itinerari" cache-view="false">
+  <ion-nav-bar class="bar-custom">
+    <ion-nav-buttons side="left">
+      <button class="button button-icon ion-navicon" menu-toggle="left" style="color: white;">
+      </button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+  <ion-content ng-controller="itinerariCtrl" ng-init="inizializza()">
+    <form name="myForm">
+      <ion-list>
+      <ion-item>
+        <ion-label id="myLabel">Scegli un itinerario</ion-label>
+        <select name="repeatSelect" id="repeatSelect" ng-model="selectedItem" ng-change="cambia(selectedItem)" style="width: 100%">
+          <option ng-repeat="info in monumenti" value="{{info.id}}">DA: {{info.partenza}} -- A: {{info.arrivo}}</option>
+        </select>
+    </form>
+    <br>
+    <br>
+    <div>
+    <ng-map ng-if="selectedItem" zoom="14" id="my-map" center="[{{start}}]">
+      <custom-control id="home" position="TOP_RIGHT" index="10" on-click="recuperaInfoItinerario()">
+        <div id="info">Info Itinerario</div>
+      </custom-control>
+      <directions
+                  travel-mode="DRIVING"
+                  waypoints="{{middle}}"
+                  origin="{{start}}"
+                  destination="{{end}}"
+                  panel="directions-panel2"
+      </directions>
+    </ng-map>
+    </div>
+    <div></div>
+    <div id="directions-panel2" style="width: 100%; float:left; height: 100%; overflow: auto; padding: 0px 5px">
+    </div>
+    </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

@@ -1,5 +1,16 @@
 <ion-view view-title="Search">
-  <ion-content>
+  <ion-content ng-init="inizializza()">
     <h1>Search</h1>
+    <div>
+    <ng-map zoom="14" id="my-map" center="[{{lat}} , {{long}}]" style="height:800px">
+      <directions ng-repeat="path in paths"
+        travel-mode="DRIVING"
+        waypoints="{{getTappe(paths[$index].tappeIntermedie)}}"
+        origin="{{paths[$index].partenza}}"
+        destination="{{paths[$index].arrivo}}"
+      </directions>
+      <marker position="[40.72, -74.20]" title="marker" animation="Animation.DROP"></marker>
+    </ng-map>
+    </div>
   </ion-content>
 </ion-view>

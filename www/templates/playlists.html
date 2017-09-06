@@ -4,6 +4,14 @@
       <ion-item ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">
         {{playlist.title}}
       </ion-item>
+      <ion-item  href="#/app/map">
+        Map
+      </ion-item>
     </ion-list>
+    <button ion-button class="button button-positive  ion button round" ng-click="insert()">Insert </button>
+    <button ion-button class="button button-positive  ion button round" ng-click="give()">givepath </button>
+    <button ion-button class="button button-positive  ion button round" ng-click="giveById()">givepathByID </button>
+    <button ion-button class="button button-positive  ion button round" ng-click="increase()">Increase </button>
+    <button ion-button class="button button-positive  ion button round" ng-click="giveName()">giveName </button>
   </ion-content>
 </ion-view>

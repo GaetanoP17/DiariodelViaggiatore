@@ -1,8 +1,42 @@
 <ion-view view-title="Diario Del Viaggiatore">
-  <ion-content ng-controller="MapCtrl">
-    <h1>Maps</h1>
-    <openlayers ol-center="center" height="70%" width="100%"></openlayers>
-    <!--<button ion-button class="button button-positive  ion button round" ng-click="getPosition()">Get Position </button>
-    <button ion-button class="button button-positive  ion button round" color="secondary">Watch Position</button>-->
+  <ion-nav-bar class="bar-custom">
+    <ion-nav-buttons side="left">
+      <button class="button button-icon ion-navicon" menu-toggle="left" style="color: white;">
+      </button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+  <ion-content ng-init="init()">
+    <div>
+      <ng-map zoom="11" center="[{{lat}}, {{long}}]"  id="map" style="height: 500px;">
+        <custom-control id="salva" position="TOP_RIGHT" index="10" >
+          <div id="info" ng-click="save()">Salva</div>
+          <div id="info2" ng-click="cancella()">Cancella</div>
+        </custom-control>
+        <marker ng-repeat="marker in markers"
+                position="[{{markers[$index].latitudine}}, {{markers[$index].longitudine}}]"
+                on-click="getpos(event, [{{markers[$index].latitudine}}, {{markers[$index].longitudine}}])"
+                icon="{{MarkerIcon}}"
+                id="{{$index}}"
+                title="{{markers[$index].nome}}"
+
+        >
+        </marker>
+
+        <directions
+          ng-if="end.length>=1"
+          panel="directions-panel"
+          travel-mode="DRIVING"
+          waypoints="{{wayPoints}}"
+          origin="{{lat}}, {{long}}"
+          destination="{{desti}}"
+        >
+        </directions>
+      </ng-map>
+
+    </div>
+    <div ng-show="mostra"id="directions-panel" style=" width: 100%; height: 100%; overflow: auto; padding: 0px 5px"></div>
   </ion-content>
 </ion-view>
+
+
+

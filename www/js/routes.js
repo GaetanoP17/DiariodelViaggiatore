@@ -14,11 +14,39 @@ angular.module('starter.routes', [])
         controller: 'AppCtrl'
       })
 
-      .state('app.search', {
+      .state('app.itinerari', {
+        url: '/itinerari',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/itinerari.html',
+          }
+        }
+      })
+
+      .state('app.map', {
+        url: '/map',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/map.html',
+            controller: 'MapCtrl'
+          }
+        }
+      });
+      /*.state('app.search', {
         url: '/search',
         views: {
           'menuContent': {
-            templateUrl: 'templates/search.html'
+            templateUrl: 'templates/search.html',
+            controller: 'PathCtrl'
+          }
+        }
+      })
+
+      .state('app.itinerari', {
+        url: '/itinerari',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/itinerari.html',
           }
         }
       })
@@ -28,11 +56,10 @@ angular.module('starter.routes', [])
         views: {
           'menuContent': {
             templateUrl: 'templates/map.html',
-            controller: 'MapCtrl'
           }
         }
       })
-      .state('app.playlists', {
+      /*.state('app.playlists', {
         url: '/playlists',
         views: {
           'menuContent': {
@@ -50,7 +77,8 @@ angular.module('starter.routes', [])
             controller: 'PlaylistCtrl'
           }
         }
-      });
+      })
+    */
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/playlists');
+    $urlRouterProvider.otherwise('/app/map');
   });

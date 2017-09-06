@@ -1,1 +1,71 @@
 /* Empty. Add your own CSS if you like */
+div #info{
+  background-color: #1E90FF;
+  color:black;
+  cursor:pointer;
+  padding: 3px;
+  margin: 10px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+div #info2{
+  background-color: #ff3558;
+  color:black;
+  cursor:pointer;
+  padding: 3px;
+  margin: 10px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+div #cancella
+{
+  background-color: #F08080;
+  color: black;
+  cursor:pointer;
+  padding: 3px;
+  margin: 10px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  text-align: center;
+}
+#myLabel
+{
+  color:#257471;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+}
+.bar.bar-custom {
+  border-color: #387ef5;
+  background-color: #257471;
+
+  color: #fff;
+}
+.menubu
+{
+  background-color: #ffffff;
+  color: #fff;
+}
+
+
+.my-container {
+  background-image:  url("http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg");
+  background-repeat: repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  height: 100%;
+  position: absolute;
+}
+.item.transp {
+  background-color: transparent;
+  color: #fff;
+}
+.transp .item-content {
+  background-color: transparent !important;
+  color: #fff;
+}
+
